@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+  <head>
+    <title>ks.no digital designguide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link(rel='stylesheet', type='text/css', href='//cloud.typography.com/6949052/779786/css/fonts.css')-->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="small-12 columns">
+          <nav data-ng-controller="navigationController as navigation" class="top-bar">
+            <script type="text/ng-template" id="navigation-template.html">
+              <div class="row">
+                <div class="small-12 medium-6 columns">
+                  <ul>
+                    <li><a href="#">Arbeidsgiverspørsmål
+                        <ul>
+                          <li><a href="#">Tariff og lønn</a></li>
+                          <li><a href="#">lov og avtaleverk</a></li>
+                          <li><a href="#">Politikk og ledelse</a></li>
+                          <li><a href="#">Arbeidsmiljø og IA</a></li>
+                          <li><a href="#">Lønn og personal</a></li>
+                          <li><a href="#">Kompetanse og rekruttering</a></li>
+                          <li><a href="#">Tall og statistikk</a></li>
+                        </ul></a></li>
+                    <li><a href="#">Økonomi og tall</a></li>
+                    <li><a href="#">Samfunn og demokrati</a></li>
+                    <li><a href="#">Oppvekst og utdanning</a></li>
+                    <li><a href="#">Helse og velferd</a></li>
+                    <li><a href="#">Digitalisering</a></li>
+                    <li><a href="#">FOU</a></li>
+                    <li><a href="#">Regionsider
+                        <ul>
+                          <li><a href="#">Nord-Norge</a></li>
+                          <li><a href="#">Midt-Norge</a></li>
+                          <li><a href="#">Vest-Norge</a></li>
+                          <li><a href="#">Agder</a></li>
+                          <li><a href="#">BTV</a></li>
+                          <li><a href="#">Akershus og Østfold</a></li>
+                          <li><a href="#">Hedmark og Oppland</a></li>
+                        </ul></a></li>
+                    <li><a href="#">Utvikling</a></li>
+                    <li><a href="#">Kurs og konferanse</a></li>
+                    <li><a href="#">Om KS</a></li>
+                    <li><a href="#">Nyhetsarkiv</a></li>
+                  </ul>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <ul>
+                    <li>area for additional links</li>
+                  </ul>
+                </div>
+              </div>
+              <!--ul
+              li(data-ng-repeat="item in items")
+                  a(ng-click="selected.item = item") {{ item }}
+                  
+                  
+                  
+              -->
+              <!-- p selected: {{ selected.item }}-->
+              <!-- button.button(ng-click="ok()") OK--><a ng-click="cancel()" class="close-reveal-modal">&#215;</a>
+            </script>
+            <ul class="title-area">
+              <li class="name"><a href="#"><img src="./img/logo.svg" width="90" class="logo"></a><span>{{navigation.selected}}</span></li>
+              <li class="toggle-topbar menu-icon"><a href="#" ng-click="navigation.open()"><span class="icon-menu"></span></a>
+                <!-- p Selection from a modal: {{ navigation.selected }}-->
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div data-ng-controller="contactController as contact" class="row contact">
+        <div class="small-12 medium-6 large-4 columns right">
+          <div class="row">
+            <div class="header-container">
+              <div class="small-2 columns"><span aria-hidden="true" class="stack-icon-veiviser small"><span aria-hidden="true" class="layer1"></span></span></div>
+              <div class="small-8 columns">
+                <h3><a data-ng-click="contact.open()" class="tiny">Kontaktperson</a></h3>
+              </div>
+              <div class="small-2 columns"><span aria-hidden="true" data-ng-class="{'active': contact.show}" class="stack-icon-toggle small"><span aria-hidden="true" class="layer1"></span></span></div>
+            </div>
+          </div>
+          <script type="text/ng-template" id="contact-template.html">
+            <div class="container"><img src="/img/profil_bilde2.jpg">
+              <div class="panel blue-light-shade1">
+                <h4>Elizabeth Grant</h4>
+                <h5>Rådgiver, Helse og velferd</h5><a href="mailto:stian.westvig@bouvet.no">elisabeth.keen@ks.no</a>
+              </div>
+              <div class="panel blue-light">
+                <div class="wrap-icon search">
+                  <input id="search-employee" type="text" class="carry-icon"><span aria-hidden="true" class="icon-search"></span>
+                </div>
+              </div>
+              <div class="panel gray-cold">
+                <h5>Medlemsservice</h5>
+                <div><a href="tel:24136403">24 13 64 03</a></div>
+                <div><a href="mailto:medlemsservice@ks.no">medlemsservice@ks.no</a></div>
+                <h5>Servicetorget</h5>
+                <div><a href="tel:24136403">24 13 64 03</a></div>
+                <div><a href="mailto:medlemsservice@ks.no">medlemsservice@ks.no</a></div>
+                <h5>Pressekontaker</h5>
+                <div><a href="tel:24136403">24 13 64 03</a></div>
+                <div><a href="mailto:medlemsservice@ks.no">medlemsservice@ks.no</a></div>
+              </div>
+              <div class="panel blue-light-shade1">
+                <select data-ng-model="region" data-ng-init="region = 'Velg region'">
+                  <option>Velg region</option>
+                  <option>Østlandet</option>
+                  <option>Vest-Norge</option>
+                  <option>Nord-Norge</option>
+                  <option>Trønderlag</option>
+                </select>
+                <div data-ng-show="region != 'Velg region'">
+                  <h4>Arholm Helene</h4>
+                  <h5>Regionsdirektør KS Vest-Norge</h5>
+                  <div><a href="mailto:helene.arholm@ks.no">helene.arholm@ks.no</a></div>
+                  <p>Besøks og postadresser</p>
+                  <p>todo expand boks.</p>
+                </div>
+              </div>
+              <div class="panel gray-cold">
+                <h5>KS</h5>
+                <p>Haakon VIIs gate 9, 0161 Oslo</p>
+                <div><a href="tel:24136403">24 13 26 00</a></div>
+                <div><a href="mailto:ks@ks.no">ks@ks.no</a></div>
+                <p>Org.nr: 971 032 146</p>
+                <p>Redaktør: Sissel Ambjør</p>
+              </div>
+              <div class="panel">
+                <p>KS advokatene</p>
+                <p>todo: ikoner, ekspand bokser</p>
+                <p>KS bedrift</p>
+                <p>KS konsulent</p>
+                <p>KS agenda</p>
+                <p>KS Besøkssenter</p>
+                <p>Kommunenes hus</p>
+                <p>Kommunal rapport</p>
+                <p>Kommuneforlaget</p>
+              </div><a ng-click="cancel()" class="close-reveal-modal">&#215;</a>
+            </div>
+          </script>
+        </div>
+      </div>
+      <div class="row">
+        <!--.small-12.large-3.columns
+        div(data-magellan-expedition="fixed")
+            //ul.side-nav.fixed
+            ul.side-nav
+                li(data-magellan-arrival="intro"): a(href="#intro") Innledning
+                li(data-magellan-arrival="grid"): a(href="#grid") Grid
+                li(data-magellan-arrival="utilities"): a(href="#utilities") Hjelpeklasser
+                li(data-magellan-arrival="navigation"): a(href="#navigation") Navigasjon
+                li(data-magellan-arrival="breadcrumb"): a(href="#breadcrumb") Brødsmulesti
+                li(data-magellan-arrival="search"): a(href="#search") Søkefelt
+                li(data-magellan-arrival="typography"): a(href="#typography") Typografi
+                li(data-magellan-arrival="pallete"): a(href="#pallete") Fargepalett
+                li(data-magellan-arrival="images"): a(href="#images") Bildebruk
+                li(data-magellan-arrival="gfx"): a(href="#gfx") Grafiske elementer
+                li(data-magellan-arrival="icons"): a(href="#icons") Ikoner
+                li(data-magellan-arrival="buttons"): a(href="#buttons") Knapper
+                li(data-magellan-arrival="tabs"): a(href="#tabs") Faner
+                li(data-magellan-arrival="tooltip"): a(href="#tooltip") Tooltip
+                li(data-magellan-arrival="focus"): a(href="#focus") Infobokser
+                li(data-magellan-arrival="lists"): a(href="#lists") Utlistinger
+                li(data-magellan-arrival="forms"): a(href="#forms") Skjema
+                li(data-magellan-arrival="dropdown"): a(href="#dropdown") Dropdown
+                li(data-magellan-arrival="helptext"): a(href="#helptext") Hjelpetekst
+                li(data-magellan-arrival="alerts"): a(href="#alerts") Alerts
+                li(data-magellan-arrival="toggle"): a(href="#toggle") Ekspander
+                li(data-magellan-arrival="slideshow"): a(href="#slideshow") Slideshow
+                li(data-magellan-arrival="lightbox"): a(href="#lightbox") Lightbox
+                
+        -->
+        <div class="small-12 large-12 columns"><a name="intro"></a>
+          <h1 data-magellan-destination="intro">Digital designguide for ks.no</h1>
+          <p>Dette er en førende designguideline for ks.no. Det som er spesifisert her er til enhver tid gjeldene for redaktører og utviklere.</p>
+          <p>Designguidelines vil fungere som dokumentasjon og et verktøy for  prototyping og utvikling gjennom prosjektet.</p><a name="grid"></a>
+          <h2 data-magellan-destination="grid">Responsiv grid</h2>
+          <p>Nedenfor vises et opsett av rader og kolonner til en responsiv grid. Griden dekker tre skjermstørrelser: small, medium, large.</p>
+          <tabset>
+            <tab heading="Forside">
+              <h3>Grid for forside</h3>
+            </tab>
+            <tab heading="Temaside">
+              <h3>Grid for temaside</h3>
+            </tab>
+            <tab heading="Artikkelgrid">
+              <div class="row">
+                <div class="small-12 columns">
+                  <h3>Artikkelgrid</h3>
+                </div>
+              </div>
+              <div class="row with-color blue-light-shade1">
+                <div class="small-12 columns text-center">
+                  <h4>Logo og meny</h4>
+                </div>
+              </div>
+              <div class="row with-color blue-light-shade3">
+                <div class="small-12 large-7 large-offset-2 columns end">
+                  <h1>Statsbudsjettet for 2015</h1>
+                </div>
+              </div>
+              <div class="row collapse with-color">
+                <div class="small-12 large-9 columns end">
+                  <div class="panel image large"></div>
+                </div>
+              </div>
+              <div class="row with-color blue-light-shade3">
+                <div class="small-12 large-7 large-offset-2 columns">
+                  <p class="intro">Ingress: Statsbudsjettet for 2015 ble lagt fram 8. oktober.</p>
+                  <h3 class="subheader">Undertittel</h3>
+                  <p>Brødtekst: Norge er et land med store muligheter. Vi har en åpen økonomi, en høyt utdannet befolkning og store naturressurser. På lang sikt er det særlig vekstevnen i fastlandsøkonomien som bestemmer velferdsutviklingen i Norge. Da er det en utfordring at mange står utenfor arbeidslivet og at veksten i produktiviteten er lavere enn før. Regjeringen vil derfor særlig prioritere tiltak som fremmer verdiskaping og økt produktivitet i norsk økonomi. Regjeringen vil bidra til å skape et robust og mangfoldig næringsliv. Regjeringen løser viktige oppgaver i dag, og ruster Norge for fremtiden.</p>
+                  <h3 class="subheader">Undertittel</h3>
+                  <p>For 2015 ventes en moderat vekst i fastlandsøkonomien på rundt 2 pst. Det er om lag på linje med fjoråret, men litt lavere enn gjennomsnittet de siste fire tiårene. Veksten i sysselsettingen holder seg oppe, og ledigheten er lav. Etter flere år med høy aktivitet i oljenæringen, ventes etterspørselen å gå markert ned til neste år. Omslaget i etterspørselen fra oljenæringen vil kreve omstillinger</p>
+                </div>
+                <div class="small-12 large-3 columns">//(data-ng-controller="illustrationController as illustration")
+                  <div class="illustration">
+                    <div class="easy-chart">//(easypiechart, data-options="illustration.config" percent="illustration.value")</div>
+                    <div>
+                      <h3>some value //{{illustration.value}}</h3>
+                    </div>
+                  </div>
+                  <div class="panel image"></div>
+                </div>
+              </div>
+              <div class="row with-color blue-light-shade1">
+                <div class="small-12 large-1 columns">
+                  <div class="panel image icon"></div>
+                </div>
+                <div class="small-12 large-8 columns end">
+                  <h4>Hva mener KS?</h4>
+                </div>
+              </div>
+              <div class="row with-color blue-light-shade2">
+                <div class="small-12 large-1 columns">
+                  <div class="panel image icon"></div>
+                </div>
+                <div class="small-12 large-8 columns end">
+                  <h4>Hva gjør KS?</h4>
+                </div>
+              </div>
+              <div class="row with-color blue-light-shade3">
+                <div class="small-12 large-1 columns">
+                  <div class="panel image icon"></div>
+                </div>
+                <div class="small-12 large-8 columns end">
+                  <h4>Fakta</h4>
+                </div>
+              </div>
+              <div class="row with-color">
+                <div class="small-12 large-1 columns">
+                  <div class="panel image icon"></div>
+                </div>
+                <div class="small-12 large-10 large-offset-1 columns">
+                  <div class="row with-color">
+                    <div class="small-12 large-6 columns">
+                      <div class="row with-color">
+                        <div class="small-12 large-5 columns">
+                          <div class="panel image"></div>
+                        </div>
+                        <div class="small-12 large-7 columns">
+                          <p>Tekst</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="small-12 large-6 columns">
+                      <div class="row with-color">
+                        <div class="small-12 large-5 columns">
+                          <div class="panel image"></div>
+                        </div>
+                        <div class="small-12 large-7 columns">
+                          <p>Tekst</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </tab>
+            <tab heading="Kode">
+              <p>Test av kode markup
+                <pre><code class="language-script">var angular = require('angular');</code></pre>
+                <pre><code class="language-markup">var i = 0; i++;</code></pre>
+              </p>
+            </tab>
+          </tabset>
+          <!-- Fargepallet:--><a name="pallete"></a>
+          <h2 data-magellan-destination="pallete">Fargepalett</h2>
+          <!-- p intro-->
+          <tabset class="pallet">
+            <tab heading="Palett">
+              <h3>Primærfarger</h3>
+              <!-- color-blue-dark-->
+              <div class="row collapse">
+                <div class="small-12">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel big blue-dark"></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#1e3a6e</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns"></div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- color-blue-light and shades-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel big blue-light"></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#1d9cd7</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <div class="panel big blue-light-shade1"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big blue-light-shade2"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big blue-light-shade3"></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <p>#66c2ed</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#9ad6f2</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#cbeaf9</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- color-teal-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel big teal"></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#34ba9f</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <div class="panel big teal-shade1"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big teal-shade2"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big teal-shade3"></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <p>#88d5c5</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#b0e3d8</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#d7f1ec</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- color-green-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel big green"></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#85c340</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <div class="panel big green-shade1"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big green-shade2"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big green-shade3"></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <p>#b7d989</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#cee4b0</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#e6f1d7</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <h3>Sekundærfarger</h3>
+              <!-- seconday colors-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <div class="panel big gold"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big red"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big gray"></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <p>#fbb019</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#cc2026</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#c7c7c7</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <div class="panel big blue-baby"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big gray-warm"></div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="panel big gray-cold"></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-4 columns">
+                      <p>#c9e4f7</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#f7f4ed</p>
+                    </div>
+                    <div class="small-4 columns">
+                      <p>#f9f8f2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </tab>
+            <tab heading="Eksempler med farger">
+              <h3>Eksempler på fargebruk</h3>
+              <!-- color-blue-dark-->
+              <div class="row collapse">
+                <div class="small-12">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel big blue-dark"><span class="circle white"></span></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#1e3a6e</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns"></div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- color-blue-light and shades with text examples-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel blue-light"><span class="circle black"></span><span class="circle blue-light-text"></span></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#1d9cd7</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel blue-light-shade-dark"><span class="circle white"></span></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#067cb3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- color-teal with text examples-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel teal"><span class="circle black"></span><span class="circle teal-text"></span></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#1d9cd7</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel teal-shade-dark"><span class="circle white"></span></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#10856f</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- color-green with text examples-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel green"><span class="circle black"></span><span class="circle green-text"></span></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#1d9cd7</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel green-shade-dark"><span class="circle white"></span></div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#59823a</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </tab>
+            <tab heading="Eksempler med tekst">
+              <h3>Eksempler med bruk av tekst</h3>
+              <!-- color-blue-dark-->
+              <div class="row collapse">
+                <div class="small-12">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel small blue-dark inverted">
+                        <p>Mørk blå tekst (#1e3a6e)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- color-blue-light and shades with text examples-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel blue-light">
+                        <p>Mørkeste tekstfarge (#000000)</p>
+                        <p class="alt">Lyseste tekstfarge (#08304b)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#1d9cd7</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel blue-light-shade-dark inverted">
+                        <p>Blå tekst (#067cb3)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- color-teal with text examples-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel teal">
+                        <p>Mørkeste tekstfarge (#000000)</p>
+                        <p class="alt">Lyseste tekstfarge (#055255)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#1d9cd7</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel teal-shade-dark inverted">
+                        <p>Blågrønn tekst (#10856f)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- color-green with text examples-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel green">
+                        <p>Mørkeste tekstfarge (#000000)</p>
+                        <p class="alt">Lyseste tekstfarge (#0d4a2b)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <p>#1d9cd7</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="row collapse">
+                    <div class="small-12 columns">
+                      <div class="panel green-shade-dark inverted">
+                        <p>Grønn tekst (#59823a)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </tab>
+            <tab heading="Kode">
+              <pre><code class="language-css">$color-black: #000;<br/>$color-white: #fff;<br/><br/><br/>$color-blue-dark: #1e3a6e;<br/>$color-blue-light: #1d9cd7;<br/>$color-blue-light-shade-dark: #067cb3;<br/>$color-blue-light-shade1: #66c2ed;<br/>$color-blue-light-shade2: #9ad6f2;<br/>$color-blue-light-shade3: #cbeaf9;<br/>$color-blue-light-text: #08304b;<br/><br/>$color-teal: #34ba9f;<br/>$color-teal-shade-dark: #10856f;<br/>$color-teal-text: #055255;<br/><br/>$color-green: #85c340;<br/>$color-green-shade-dark: #59823a;<br/>$color-green-text: #0d4a2b;<br/><br/><br/>$color-gold: #fbb019;<br/>$color-red: #cc2026;<br/>$color-gray: #C7C6C6;<br/>$color-blue-baby: #c9e4f7;<br/>$color-gray-warm: #f7f4ed;<br/>$color-gray-cold: #f9f8f2;</code></pre>
+            </tab>
+          </tabset>
+          <!-- icons--><a name="icons"></a>
+          <h2 data-magellan-destination="icons">Ikoner</h2>
+          <!-- p Intro-->
+          <tabset>
+            <tab heading="Ikoner"><span aria-hidden="true" class="stack-icon-veiviser spacer"><span aria-hidden="true" class="layer1"></span></span><span aria-hidden="true" class="stack-icon-toggle spacer"><span aria-hidden="true" class="layer1"></span></span><span aria-hidden="true" class="stack-icon-search spacer"><span aria-hidden="true" class="layer1"></span></span><span aria-hidden="true" class="icon-arrow-up spacer"></span><span aria-hidden="true" class="icon-arrow-right spacer"></span><span aria-hidden="true" class="icon-arrow-down spacer"></span><span aria-hidden="true" class="icon-arrow-left spacer"></span><span aria-hidden="true" class="icon-search spacer"></span></tab>
+            <tab heading="Kode"></tab>
+          </tabset>
+          <!-- breadcrumb--><a name="breadcrumb"></a>
+          <h2 data-magellan-destination="breadcrumb">Brødsmulesti</h2>
+          <!-- p Intro-->
+          <tabset>
+            <tab heading="Design">
+              <ul class="breadcrumbs">
+                <li><a href="#">Hjem</a></li>
+                <li><a href="#">Område</a></li>
+                <li><a href="#">Tema</a></li>
+                <li class="current"><span>Artikkel</span></li>
+              </ul>
+            </tab>
+            <tab heading="Kode"></tab>
+          </tabset>
+          <!-- lists--><a name="lists"></a>
+          <h2 data-magellan-destination="lists">Utlistinger</h2>
+          <!-- p Intro-->
+          <tabset>
+            <tab heading="Design">
+              <div class="row">
+                <div class="small-12 medium-4 columns end">
+                  <ul class="link-list">
+                    <li><a href="#">Hjem</a></li>
+                    <li><a href="#">Område</a></li>
+                    <li><a href="#">Tema</a></li>
+                    <li>Artikkel</li>
+                  </ul>
+                </div>
+              </div>
+            </tab>
+            <tab heading="Kode"></tab>
+          </tabset>
+          <!-- breadcrumb--><a name="panels"></a>
+          <h2 data-magellan-destination="panels">Paneler</h2>
+          <!-- p Intro-->
+          <tabset>
+            <tab heading="Panels">
+              <div class="row">
+                <div class="small-12 medium-6 columns">
+                  <div class="panel teal-shade1">
+                    <div class="row">
+                      <div class="small-12 medium-2 columns"><span aria-hidden="true" class="stack-icon-veiviser spacer"><span aria-hidden="true" class="layer1"></span></span></div>
+                      <div class="small-12 medium-10 columns">
+                        <h2>Kalender</h2>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-12 columns">
+                        <p>Gå til kalender</p>
+                        <p>content.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                  <div class="panel blue-light-shade1">
+                    <div class="row">
+                      <div class="small-12 medium-2 columns hide-for-small"><span aria-hidden="true" class="stack-icon-veiviser spacer"><span aria-hidden="true" class="layer1"></span></span></div>
+                      <div class="small-12 medium-10 columns">
+                        <h2>Hva mener KS?</h2>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-12 columns">
+                        <p>Om denne saken mener KS dette:</p>
+                        <ul>
+                          <li>Mening 1</li>
+                          <li>Mening 2</li>
+                          <li>Mening 3</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="small-12 columns">
+                  <div class="panel gray-warm">
+                    <div class="row">
+                      <div class="small-12 medium-4 columns">
+                        <div class="panel white">
+                          <div class="row">
+                            <div class="small-12 medium-3 columns"><span aria-hidden="true" class="stack-icon-veiviser spacer"><span aria-hidden="true" class="layer1"></span></span></div>
+                            <div class="small-12 medium-9 columns">
+                              <h4 class="allign-with-icon">Gode eksempler</h4>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="small-12 columns">
+                              <ul class="link-list">
+                                <li><a href="#">Her kommer en link</a></li>
+                                <li><a href="#">Her kommer en link</a></li>
+                                <li><a href="#">Her kommer en link</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="small-12 medium-4 columns">
+                        <div class="panel white">
+                          <ul class="article-list">
+                            <li>
+                              <p class="header">02.09.2011 | KS Sentralt</p><a href="#">Etikkutvalgets møte 22 -23 september</a>
+                            </li>
+                            <li>
+                              <p class="header">02.09.2011 | KS Sentralt</p><a href="#">Etikkutvalgets møte 22 -23 september</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="small-12 medium-4 columns">
+                        <div class="panel white">
+                          <p>content</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </tab>
+            <tab heading="Kode"></tab>
+          </tabset>
+          <!-- typography--><a name="typography"></a>
+          <h2 data-magellan-destination="typography">Typografi</h2>
+          <p>Overskrifter på nett er av 6 ulike nivåer. Alle sider skal ha en h1, som er viktigste overskriftsnivå. Alle overskrifter under dette vil da være h2. Eventuelle overskrifter innenfor samme tema/avsnitt som h2 vil da bli h3, og slik fortsetter det.</p>
+          <p>I en tekst med flere nivåer av overskrifter, så kan man si at det skal være "subheaders". Disse vil skille seg visuelt fra overskrifter man typisk har på forsider.</p>
+          <p>Vi kan også ha innskutte ord i overskriften som skiller seg visuelt.</p>
+          <tabset>
+            <tab heading="Tekst">
+              <h1>Overskrift 1</h1>
+              <p class="intro">Ingress: Landsstyret i KS har etter sitt møte denne uken avgitt en uttalelse om Regjeringens strategi "Lærerløftet".</p>
+              <h2>Overskrift 2</h2>
+              <p>Landsstyret mener at et lærerfellesskap med relevant pedagogisk og faglig kompetanse utgjør skolens viktigste ressurs, og støtter de ambisjoner for kunnskapsutvikling som kommer til uttrykk i Regjeringens strategi «Lærerløftet».</p>
+              <h2>Overskrift 2</h2>
+              <p>Landsstyret mener at et lærerfellesskap med relevant pedagogisk og faglig kompetanse utgjør skolens viktigste ressurs, og støtter de ambisjoner for kunnskapsutvikling som kommer til uttrykk i Regjeringens strategi «Lærerløftet».</p>
+              <h3>Overskrift 3</h3>
+              <p>Landsstyret mener at et lærerfellesskap med relevant pedagogisk og faglig kompetanse utgjør skolens viktigste ressurs, og støtter de ambisjoner for kunnskapsutvikling som kommer til uttrykk i Regjeringens strategi «Lærerløftet».</p>
+              <h4>Overskrift 4</h4>
+              <p>Landsstyret mener at et lærerfellesskap med relevant pedagogisk og faglig kompetanse utgjør skolens viktigste ressurs, og støtter de ambisjoner for kunnskapsutvikling som kommer til uttrykk i Regjeringens strategi «Lærerløftet».</p>
+              <h2>Overskrift 2</h2>
+              <p>Landsstyret mener at et lærerfellesskap med relevant pedagogisk og faglig kompetanse utgjør skolens viktigste ressurs, og støtter de ambisjoner for kunnskapsutvikling som kommer til uttrykk i Regjeringens strategi «Lærerløftet».</p>
+            </tab>
+            <tab heading="Overskrifter">
+              <h1>h1. Dette er den viktigste overskriften</h1></h1>
+              <h2>h2. Dette er en viktig overskrift</h2></h2>
+              <h3>h3. Dette er en mindre viktig overskrift</h3></h3>
+              <h4>h4. Enda mindre overskrift</h4></h4>
+              <h5>h5. Enda mindre overskrift</h5></h5>
+              <h6>h6. Enda mindre overskrift</h6></h6>
+              <hr>
+              <h1 class="subheader">h1.subheader - For å skille overskrifter i tekst visuelt</h1>
+              <h2 class="subheader">h2.subheader - For å skille overskrifter i tekst visuelt</h2>
+              <h3 class="subheader">h3.subheader</h3>
+              <h4 class="subheader">h4.subheader</h4>
+              <h5 class="subheader">h5.subheader</h5>
+              <h6 class="subheader">h6.subheader</h6>
+              <hr>
+              <h1>h1. Overskrift <small>med et innskutt segment</small></h1>
+              <h2>h2. <small>med et innskutt segment</small></h2>
+              <h3>h3. <small>med et innskutt segment</small></h3>
+              <h4>h4. <small>med et innskutt segment</small></h4>
+              <h5>h5. <small>med et innskutt segment</small></h5>
+              <h6>h6. <small>med et innskutt segment</small></h6>
+            </tab>
+            <tab heading="Kode"></tab>
+          </tabset>
+          <!-- Forms--><a name="forms"></a>
+          <h2 data-magellan-destination="forms">Skjemaelementer</h2>
+          <!-- p Intro-->
+          <tabset>
+            <tab heading="Design">
+              <div class="row">
+                <div class="small-12 medium-6 large-3 columns">
+                  <label for="area">Velg type</label>
+                </div>
+                <div class="small-12 medium-6 large-3 columns">
+                  <label for="topic">Velg tema</label>
+                </div>
+                <div class="small-12 medium-6 large-3 columns">
+                  <label for="search">Fritekstsøk</label>
+                </div>
+                <div class="small-12 medium-6 large-3 columns"></div>
+              </div>
+              <div class="row">
+                <div class="small-12 medium-6 large-3 columns">
+                  <select id="area">
+                    <option>Område</option>
+                    <option>Arbeidsgiver</option>
+                    <option>Ledelse</option>
+                    <option>Økonomi</option>
+                  </select>
+                </div>
+                <div class="small-12 medium-6 large-3 columns">
+                  <select id="topic">
+                    <option>Tema</option>
+                    <option>Helse</option>
+                    <option>Skole</option>
+                    <option>Juss</option>
+                  </select>
+                </div>
+                <div class="small-12 medium-6 large-3 columns">
+                  <div class="wrap-icon search">
+                    <input id="search" type="text" class="carry-icon"><span aria-hidden="true" class="icon-search"></span>
+                  </div>
+                </div>
+                <div class="small-12 medium-6 large-3 columns">
+                  <select id="topic" disabled="disabled">
+                    <option>Tema</option>
+                    <option>Helse</option>
+                    <option>Skole</option>
+                    <option>Juss</option>
+                  </select>
+                </div>
+              </div>
+            </tab>
+            <tab heading="Kode"></tab>
+          </tabset><a name="buttons"></a>
+          <h2 data-magellan-destination="buttons">Knapper</h2>
+          <!-- p Intro-->
+          <tabset>
+            <tab heading="Små">
+              <div class="row">
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button tiny radius">Liten knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button red tiny radius">Liten knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button blue-light tiny radius">Liten knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button teal tiny radius">Liten knapp</a></div>
+              </div>
+              <div class="row">
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button border tiny radius">Liten knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button red border tiny radius">Liten knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button blue-light border tiny radius">Liten knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button teal border tiny radius">Liten knapp</a></div>
+              </div>
+              <div class="row">
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button tiny radius">
+                    <div class="wrap-icon"><span class="carry-icon">Liten knapp</span><span aria-hidden="true" class="icon-arrow-right"></span><span class="circle white"></span></div></a>
+                  <p>løse dette med icon stack?</p>
+                </div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button red tiny radius">
+                    <div class="wrap-icon"><span class="carry-icon">Liten knapp</span><span aria-hidden="true" class="icon-arrow-right"></span></div></a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button blue-light tiny radius">
+                    <div class="wrap-icon"><span class="carry-icon">Liten knapp</span><span aria-hidden="true" class="icon-arrow-right"></span></div></a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button teal tiny radius">
+                    <div class="wrap-icon"><span class="carry-icon">Liten knapp</span><span aria-hidden="true" class="icon-arrow-right"></span></div></a></div>
+              </div>
+            </tab>
+            <tab heading="Store">
+              <div class="row">
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button radius">Knapp med ikon</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button red radius">Knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button blue-light radius">Knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button teal radius">Knapp</a></div>
+              </div>
+              <div class="row">
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button border radius">Knapp med ikon</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button red border radius">Knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button blue-light border radius">Knapp</a></div>
+                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button teal border radius">Knapp</a></div>
+              </div>
+            </tab>
+            <tab heading="Kode"></tab>
+          </tabset>
+          <div class="footer">
+            <div class="alphabet">
+              <ul>
+                <li><a href="#">a</a></li>
+                <li><a href="#">b</a></li>
+                <li><a href="#">c</a></li>
+                <li><a href="#">d</a></li>
+                <li><a href="#">e</a></li>
+                <li><a href="#">f</a></li>
+                <li><a href="#">g</a></li>
+                <li><a href="#">h</a></li>
+                <li><a href="#">i</a></li>
+                <li><a href="#">j</a></li>
+                <li><a href="#">k</a></li>
+                <li><a href="#">l</a></li>
+                <li><a href="#">m</a></li>
+                <li><a href="#">n</a></li>
+                <li><a href="#">o</a></li>
+                <li><a href="#">p</a></li>
+                <li><a href="#">q</a></li>
+                <li><a href="#">r</a></li>
+                <li><a href="#">s</a></li>
+                <li><a href="#">t</a></li>
+                <li><a href="#">u</a></li>
+                <li><a href="#">v</a></li>
+                <li><a href="#">w</a></li>
+                <li><a href="#">x</a></li>
+                <li><a href="#">y</a></li>
+                <li><a href="#">z</a></li>
+                <li><a href="#">æ</a></li>
+                <li><a href="#">ø</a></li>
+                <li><a href="#">å</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/bundle2.js"></script>
+  </body>
+</html>

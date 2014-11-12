@@ -1,0 +1,211 @@
+
+<!--.row
+.small-12.columns
+    h1 Områdesiden
+    p.intro Dette er altså områdesiden
+    p Oppdatert brødtekst for områdesiden. Brødtekst for områdesiden. Brødtekst for områdesiden. Brødtekst for områdesiden. Brødtekst for områdesiden. Brødtekst for områdesiden.
+    
+-->
+<div class="panel gray-something tight-horizontal">
+  <div class="row">
+    <div class="small-12 medium-8 medium-offset-2 large-4 large-offset-0 columns end">
+      <label for="omraade">Velg område</label>
+      <select id="omraade" data-ng-model="page.selectedOmraade" data-ng-options="item.name for item in page.omraade" data-ng-change="page.updateOmraade()">
+        <option value="">-</option>
+      </select>
+    </div>
+    <div class="small-12 medium-8 medium-offset-2 large-4 large-offset-0 columns end">
+      <label for="tema">Velg tema</label>
+      <select id="tema" data-ng-model="page.selectedTema" data-ng-options="item.name for item in page.tema | filter:page.selectedOmraade.id" data-ng-change="page.updateTema()" data-ng-disabled="page.selectedOmraade === null || (page.tema | filter:page.selectedOmraade.id).length &lt; 1 ">
+        <option value="">-</option>
+      </select>
+    </div>
+    <div class="small-12 medium-8 medium-offset-2 large-4 large-offset-0 columns end">
+      <label for="emne">Velg emne</label>
+      <select id="emne" data-ng-model="page.selectedEmne" data-ng-options="item.name for item in page.emne | filter:page.selectedTema.id" data-ng-change="page.updateEmne()" data-ng-disabled=" (page.emne | filter:page.selectedTema.id).length &lt; 1">//
+        <option value="">-</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="panel gray-cold tight-horizontal padding-bottom">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-12 medium-6 columns"><img data-ng-src="{{page.mainArticle.image}}"/></div>
+        <div class="small-12 medium-6 columns">
+          <h1>{{page.mainArticle.title}}</h1>
+          <p class="intro">{{page.mainArticle.intro}}</p>
+          <p>{{page.mainArticle.body}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="small-12 medium-10 large-9 large-offset-1 columns">
+      <div class="row fag">
+        <div class="small-12 columns medium-text-center">
+          <hr/><span class="icon-sirkel"></span>
+          <h4>Fagartikler</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="article-filter">
+            <ul>
+              <li class="selected"><a href="#">Alle artikler</a></li>
+              <li><a href="#">Høringer</a></li>
+              <li><a href="#">Rundskriv</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <ul class="article-list">
+            <li>
+              <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+            </li>
+            <li>
+              <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+            </li>
+          </ul>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <ul class="article-list">
+            <li>
+              <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+            </li>
+            <li>
+              <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+            </li>
+          </ul>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <ul class="article-list">
+            <li>
+              <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+            </li>
+            <li>
+              <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div data-ng-show="false" class="small-12 medium-2 columns medium-text-center">//(data-ng-show="page.selectedEmne")
+      <hr/>
+      <p><a href="#">Sykefraværet i barnehager</a></p>
+      <p><a href="#">Kvinner: 12,42%</a></p>
+      <p><a href="#">Menn: 8,6%</a></p>
+      <p><a href="#">Begge: 12,17%</a></p>
+    </div>
+  </div>
+</div>
+<div class="panel tight-all">
+  <div class="row kurs">
+    <div class="small-12 columns medium-text-center">
+      <hr/><span class="icon-sirkel"></span>
+      <h4>Kurs og konferanser</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-8 large-offset-2 columns end">
+      <div class="row">
+        <div class="small-12 medium-2 columns"><span class="icon-sirkel teal"></span></div>
+        <div class="small-12 medium-10 columns"><a href="#">Samarbeid om etisk kompetanseheving: Utdeling av Etikkprisen 2014</a></div>
+        <div class="small-12 medium-10 columns">
+          <p class="meta">Oslo, KS-Møtesenter</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-2 columns"><span class="icon-sirkel teal"></span></div>
+        <div class="small-12 medium-10 columns"><a href="#">Kurs i hverdagsrehabilitering</a></div>
+        <div class="small-12 medium-10 columns">
+          <p class="meta">Hedmark og Oppland</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns medium-text-center"><a href="#" class="button teal border radius">Kurs og konferanser</a></div>
+  </div>
+</div>
+<div class="panel gray-cold tight-horizontal margin-bottom">
+  <div class="panel green-to-green-shade1 tight-horizontal">
+    <div class="row">
+      <div class="small-12 medium-5 medium-offset-1 columns">
+        <h2>Samarbeid om etisk kompetanseheving</h2><a href="#" class="button green border radius">Lær mer om prosjektet</a>
+      </div>
+      <div class="small-12 medium-5 medium-offset-1 columns">
+        <h2>Her kan man lage tittel på prosjekt</h2><a href="#" class="button green border radius">Lær mer om prosjektet</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <!-- p OBS: Todelt bakgrunn krever tilpasset koding.-->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-4 columns">
+    <div class="panel gray-cold">
+      <div class="row">
+        <div class="span-12 columns medium-text-center"><span class="stack-icon-veiviser"><span class="layer1"></span></span></div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <h4>Relaterte lenker</h4>
+          <ul class="link-list">
+            <li><a href="#">Her kommer en link</a></li>
+            <li><a href="#">Her kommer en link</a></li>
+            <li><a href="#">Her kommer en link</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="small-12 medium-4 columns">
+    <div class="panel gray-cold qa">
+      <div class="row">
+        <div class="span-12 columns medium-text-center"><span class="icon-sirkel"></span></div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <h4>Spørsmål og svar</h4>
+          <ul class="link-list">
+            <li><a href="#">Her kommer en link</a></li>
+            <li><a href="#">Her kommer en link</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="small-12 medium-4 columns">
+    <div class="panel gray-cold examples">
+      <div class="row">
+        <div class="span-12 columns medium-text-center"><span class="icon-sirkel"></span></div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <h4>Verktøy og gode eksempler</h4>
+          <ul class="link-list">
+            <li><a href="#">Her kommer en link</a></li>
+            <li><a href="#">Her kommer en link</a></li>
+            <li><a href="#">Her kommer en link</a></li>
+            <li><a href="#">Her kommer en link</a></li>
+            <li><a href="#">Her kommer en link</a></li>
+            <li><a href="#">Her kommer en link</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel gray-cold kontakt">
+  <div class="row">
+    <div class="small-12 medium-6 medium-offset-3 large-4 large-offset-4 columns color-end">
+      <div class="medium-text-center"><span class="icon-sirkel"></span>
+        <h3>Kontaktperson</h3>
+        <p>Fornavn, etternavn</p>
+      </div>
+    </div>
+  </div>
+</div>
