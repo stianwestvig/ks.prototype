@@ -467,7 +467,7 @@
                       <div class="panel big blue-baby"></div>
                     </div>
                     <div class="small-4 columns">
-                      <div class="panel big gray-warm"></div>
+                      <div class="panel big gray-something"></div>
                     </div>
                     <div class="small-4 columns">
                       <div class="panel big gray-cold"></div>
@@ -478,12 +478,24 @@
                       <p>#c9e4f7</p>
                     </div>
                     <div class="small-4 columns">
-                      <p>#f7f4ed</p>
+                      <p>#EAE8E1</p>
                     </div>
                     <div class="small-4 columns">
                       <p>#f9f8f2</p>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <div class="panel big gray-dark">
+                    <div class="row collapse"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row collapse">
+                <div class="small-12 medium-6 columns">
+                  <p>#686868</p>
                 </div>
               </div>
             </tab>
@@ -778,7 +790,7 @@
               </div>
               <div class="row">
                 <div class="small-12 columns">
-                  <div class="panel gray-warm">
+                  <div class="panel gray-cold">
                     <div class="row">
                       <div class="small-12 medium-4 columns">
                         <div class="panel white">
@@ -921,32 +933,93 @@
           <h2 data-magellan-destination="buttons">Knapper</h2>
           <!-- p Intro-->
           <tabset>
-            <tab heading="Små">
-              <div class="row">
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button tiny radius">Liten knapp</a></div>
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button red tiny radius">Liten knapp</a></div>
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button blue-light tiny radius">Liten knapp</a></div>
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button teal tiny radius">Liten knapp</a></div>
-              </div>
-              <div class="row">
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button border tiny radius">Liten knapp</a></div>
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button red border tiny radius">Liten knapp</a></div>
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button blue-light border tiny radius">Liten knapp</a></div>
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button teal border tiny radius">Liten knapp</a></div>
-              </div>
-              <div class="row">
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button tiny radius">
-                    <div class="wrap-icon"><span class="carry-icon">Liten knapp</span><span aria-hidden="true" class="icon-arrow-right"></span><span class="circle white"></span></div></a>
-                  <p>løse dette med icon stack?</p>
+            <tab heading="Knapper">
+              <!-- blue buttons-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 large-4 columns">
+                  <div class="panel white"><a href="#buttons" class="button radius blue">Knapp på hvit</a></div>
                 </div>
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button red tiny radius">
-                    <div class="wrap-icon"><span class="carry-icon">Liten knapp</span><span aria-hidden="true" class="icon-arrow-right"></span></div></a></div>
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button blue-light tiny radius">
-                    <div class="wrap-icon"><span class="carry-icon">Liten knapp</span><span aria-hidden="true" class="icon-arrow-right"></span></div></a></div>
-                <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button teal tiny radius">
-                    <div class="wrap-icon"><span class="carry-icon">Liten knapp</span><span aria-hidden="true" class="icon-arrow-right"></span></div></a></div>
+                <div class="small-12 medium-6 large-4 columns">
+                  <div class="panel blue-light"><a href="#buttons" class="button radius blue">Knapp på blå</a></div>
+                </div>
+                <div class="small-12 medium-6 large-4 columns">
+                  <div class="panel blue-light-shade1"><a href="#buttons" class="button radius blue">Knapp lys blå</a></div>
+                </div>
+              </div>
+              <!-- teal buttons-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 large-4 columns">
+                  <div class="panel white"><a href="#buttons" class="button radius teal">Knapp på hvit</a></div>
+                </div>
+                <div class="small-12 medium-6 large-4 columns">
+                  <div class="panel teal"><a href="#buttons" class="button radius teal">Knapp på grønn</a></div>
+                </div>
+                <div class="small-12 medium-6 large-4 columns">
+                  <div class="panel teal-shade1"><a href="#buttons" class="button radius teal">Knapp lys grønn</a></div>
+                </div>
+              </div>
+              <!-- green buttons-->
+              <div class="row collapse">
+                <div class="small-12 medium-6 large-4 columns">
+                  <div class="panel white"><a href="#buttons" class="button radius green">Knapp på hvit</a></div>
+                </div>
+                <div class="small-12 medium-6 large-4 columns">
+                  <div class="panel green"><a href="#buttons" class="button radius green">Knapp på grønn</a></div>
+                </div>
+                <div class="small-12 medium-6 large-4 columns">
+                  <div class="panel green-shade1"><a href="#buttons" class="button radius green">Knapp lys grønn</a></div>
+                </div>
               </div>
             </tab>
+            <!--
+            .row
+                .small-12.medium-6.large-3.columns
+                
+                .small-12.medium-6.large-3.columns
+                    a.button.red.tiny.radius(href="#buttons") Liten knapp
+                .small-12.medium-6.large-3.columns
+                    a.button.blue-light.tiny.radius(href="#buttons") Liten knapp
+                .small-12.medium-6.large-3.columns
+                    a.button.teal.tiny.radius(href="#buttons") Liten knapp
+            .row
+                .small-12.medium-6.large-3.columns
+                    a.button.border.tiny.radius(href="#buttons") Liten knapp
+                .small-12.medium-6.large-3.columns
+                    a.button.red.border.tiny.radius(href="#buttons") Liten knapp
+                .small-12.medium-6.large-3.columns
+                    a.button.blue-light.border.tiny.radius(href="#buttons") Liten knapp
+                .small-12.medium-6.large-3.columns
+                    a.button.teal.border.tiny.radius(href="#buttons") Liten knapp
+            .row
+                .small-12.medium-6.large-3.columns
+                    a.button.tiny.radius(href="#buttons")
+                        .wrap-icon
+                            span.carry-icon Liten knapp
+                            span.icon-arrow-right(aria-hidden="true")
+                            span.circle.white
+                            
+                    p løse dette med icon stack?
+                    
+                    
+                .small-12.medium-6.large-3.columns
+                    a.button.red.tiny.radius(href="#buttons")
+                        .wrap-icon
+                            span.carry-icon Liten knapp
+                            span.icon-arrow-right(aria-hidden="true")
+                .small-12.medium-6.large-3.columns
+                    a.button.blue-light.tiny.radius(href="#buttons")
+                        .wrap-icon
+                            span.carry-icon Liten knapp
+                            span.icon-arrow-right(aria-hidden="true")
+                .small-12.medium-6.large-3.columns
+                    a.button.teal.tiny.radius(href="#buttons")
+                        .wrap-icon
+                            span.carry-icon Liten knapp
+                            span.icon-arrow-right(aria-hidden="true")
+                            
+                            
+                            
+            -->
             <tab heading="Store">
               <div class="row">
                 <div class="small-12 medium-6 large-3 columns"><a href="#buttons" class="button radius">Knapp med ikon</a></div>
