@@ -32435,9 +32435,6 @@ var pageController = app.controller('pageController', function($scope, dataServi
             // scope.foo = newVal;
             console.log('watched ID from route. Got new value: ', $scope.routeId);
 
-
-
-
             page.setOmraade($scope.routeId);
         }
     });
@@ -32607,7 +32604,7 @@ var pageController = app.controller('pageController', function($scope, dataServi
 'use strict';
 
 app.factory('dataService', function($http) {
-    var apiUrl = 'http://10.1.101.22:3000/';
+    var apiUrl = 'http://localhost:3000/';
 
     return {
         getOmraade: function () {
