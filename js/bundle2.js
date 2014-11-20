@@ -32504,6 +32504,9 @@ var pageController = app.controller('pageController', function($scope, dataServi
             page.emne = offlineDataService.getEmne();
             page.everything.push(offlineDataService.getEmne());
 
+            page.articles = offlineDataService.getArticles();
+            page.setArticle('f5d3de8fa236b80a');
+
             page.everything = page.everything[0].concat(page.everything[1], page.everything[2]);
             dataService.everything = page.everything;
         }
