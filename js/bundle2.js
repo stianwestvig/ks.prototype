@@ -32425,6 +32425,7 @@ var pageController = app.controller('pageController', function($scope, dataServi
     page.habilitet = false;
 
     page.mainArticle = null;
+    page.isAzure = window.location.href.indexOf("azurewebsites") > -1;
 
 
     $scope.routeParams = $routeParams;
@@ -32442,52 +32443,72 @@ var pageController = app.controller('pageController', function($scope, dataServi
     $scope.$evalAsync(function () {
 
         // get all data:
-        dataService.getOmraade()
-            .success(function (data) {
-                page.omraade = data;
-                page.everything.push(data);
-                page.selectedOmraade = page.omraade[0];
-            })
-            .error(function () {
-                page.omraade = offlineDataService.getOmraade();
-                page.everything.push(offlineDataService.getOmraade());
-                page.selectedOmraade = page.omraade[0];
-            });
+        if (!page.isAzure) {
 
-        dataService.getTema()
-            .success(function (data) {
-                page.tema = data;
-                page.everything.push(data);
-            })
-            .error(function () {
-                page.tema = offlineDataService.getTema();
-                page.everything.push(offlineDataService.getTema());
-            });
+            dataService.getOmraade()
+                .success(function (data) {
+                    page.omraade = data;
+                    page.everything.push(data);
+                    page.selectedOmraade = page.omraade[0];
+                })
+                .error(function () {
+                    page.omraade = offlineDataService.getOmraade();
+                    page.everything.push(offlineDataService.getOmraade());
+                    page.selectedOmraade = page.omraade[0];
+                });
+
+            dataService.getTema()
+                .success(function (data) {
+                    page.tema = data;
+                    page.everything.push(data);
+                })
+                .error(function () {
+                    page.tema = offlineDataService.getTema();
+                    page.everything.push(offlineDataService.getTema());
+                });
+
+            dataService.getEmne()
+                .success(function (data) {
+                    page.emne = data;
+                    page.everything.push(data);
+                })
+                .error(function () {
+                    page.emne = offlineDataService.getEmne();
+                    page.everything.push(offlineDataService.getEmne());
+                })
+                .then(function () {
+                    page.everything = page.everything[0].concat(page.everything[1], page.everything[2]);
+                    dataService.everything = page.everything;
+                });
+
+            dataService.getArticles()
+                .success(function (data) {
+                    page.articles = data;
+                    page.setArticle('f5d3de8fa236b80a');
+                })
+                .error(function () {
+                    page.articles = offlineDataService.getArticles();
+                    page.setArticle('f5d3de8fa236b80a');
+                });
+        }
+        else {
+            // Its Azure - get all data locally.
+
+            page.omraade = offlineDataService.getOmraade();
+            page.everything.push(offlineDataService.getOmraade());
+            page.selectedOmraade = page.omraade[0];
+
+            page.tema = offlineDataService.getTema();
+            page.everything.push(offlineDataService.getTema());
+
+            page.emne = offlineDataService.getEmne();
+            page.everything.push(offlineDataService.getEmne());
+
+            page.everything = page.everything[0].concat(page.everything[1], page.everything[2]);
+            dataService.everything = page.everything;
+        }
 
 
-        dataService.getEmne()
-            .success(function (data) {
-                page.emne = data;
-                page.everything.push(data);
-            })
-            .error(function () {
-                page.emne = offlineDataService.getEmne();
-                page.everything.push(offlineDataService.getEmne());
-            })
-            .then(function () {
-                page.everything = page.everything[0].concat(page.everything[1], page.everything[2]);
-                dataService.everything = page.everything;
-            });
-
-        dataService.getArticles()
-            .success(function (data) {
-                page.articles = data;
-                page.setArticle('f5d3de8fa236b80a');
-            })
-            .error(function () {
-                page.articles = offlineDataService.getArticles();
-                page.setArticle('f5d3de8fa236b80a');
-            });
 
         console.log("done getting data in $evalAsync: ");
         console.log('async says omraade: ', page.omraade);
