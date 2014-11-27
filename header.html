@@ -3,63 +3,72 @@
   <div class="small-12 columns">
     <nav data-ng-controller="navigationController as navigation" class="top-bar-custom">
       <script type="text/ng-template" id="navigation-template.html">
+        <div class="row close">
+          <div class="small-12 columns"><a ng-click="cancel()" class="close-reveal-modal">&#215;</a></div>
+        </div>
         <div class="row">
           <div class="small-12 medium-6 columns">
-            <ul>
-              <li><a href="#/arbeidsgiver" focus-me="shouldBeOpen" ng-click="cancel()">Arbeidsgiverspørsmål
-                  <ul>
-                    <li><a href="#/tema" ng-click="cancel()">Tariff og lønn
-                        <ul>
-                          <li><a href="#/emne" ng-click="cancel()">Emne?</a></li>
-                        </ul></a></li>
-                    <li><a href="#/tema" ng-click="cancel()">lov og avtaleverk</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Politikk og ledelse</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Arbeidsmiljø og IA</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Lønn og personal</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Kompetanse og rekruttering</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Tall og statistikk</a></li>
-                  </ul></a></li>
-              <li><a href="#/omraade" ng-click="cancel()">Økonomi og tall</a></li>
-              <li><a href="#/samfunn" ng-click="cancel()">Samfunn og demokrati</a></li>
-              <li><a href="#/omraade" ng-click="cancel()">Oppvekst og utdanning</a></li>
-              <li><a href="#/omraade" ng-click="cancel()">Helse og velferd</a></li>
-              <li><a href="#/omraade" ng-click="cancel()">Digitalisering</a></li>
-              <li><a href="#/omraade" ng-click="cancel()">FOU</a></li>
-              <li><a href="#/omraade" ng-click="cancel()">Regionsider
-                  <ul>
-                    <li><a href="#/tema" ng-click="cancel()">Nord-Norge</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Midt-Norge</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Vest-Norge</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Agder</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">BTV</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Akershus og Østfold</a></li>
-                    <li><a href="#/tema" ng-click="cancel()">Hedmark og Oppland</a></li>
-                  </ul></a></li>
-              <li><a href="#/omraade" ng-click="cancel()">Utvikling</a></li>
-              <li><a href="#/omraade" ng-click="cancel()">Kurs og konferanse</a></li>
-              <li><a href="#/omraade" ng-click="cancel()">Om KS</a></li>
-              <li><a href="#/omraade" ng-click="cancel()">Nyhetsarkiv</a></li>
+            <ul class="text-right">
+              <li><a href="#/arbeidsgiver" focus-me="shouldBeOpen" ng-click="cancel()" class="header2">Arbeidsgiver</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">Økonomi og tall</a></li>
+              <li><a href="#/samfunn" ng-click="cancel()" class="header2">Samfunn og demokrati</a></li>
+              <!--li: a.header2.selected(href="#/samfunn", ng-click="cancel()") Samfunn og demokrati-->
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">Utvikling</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">Helse og velferd</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">Oppvekst og utdanning</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">Digitalisering</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">FOU</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">Regionsider</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">Om KS</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">KS advokatene</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">Kontakt oss</a></li>
+              <li><a href="#/omraade" ng-click="cancel()" class="header2">English</a></li>
             </ul>
           </div>
           <div class="small-12 medium-6 columns">
-            <ul>
-              <li>area for additional links</li>
-            </ul>
+            <div class="row">
+              <div class="small-12 medium-6 columns"><a href="#" class="block"><img src="img/stortinget.jpg" alt=""/>
+                  <h2 class="header3">KS krever rettferdig barnehagefinnansiering</h2></a></div>
+              <div class="small-12 medium-6 columns"><a href="#"><img src="img/eldrepleie.jpg" alt=""/>
+                  <h2 class="header3">KS møtte kommunalministeren</h2></a></div>
+            </div>
+            <!--
+            ul
+                li: a.header2(href="#/tema", ng-click="cancel()") Arbeidgivermonitor
+                li: a.header2(href="#/tema", ng-click="cancel()") Arbeidgiverpolitikk og ledelse
+                li: a.header2(href="#/tema", ng-click="cancel()") Arbeidsmiljø og IA
+                li: a.header2(href="#/tema", ng-click="cancel()") Kompetanse og rekruttering
+                li: a.header2(href="#/tema", ng-click="cancel()") Lov og avtaleverk
+                li: a.header2(href="#/tema", ng-click="cancel()") Lønn og tariff
+                li: a.header2(href="#/tema", ng-click="cancel()") Lønn og personal
+            -->
+            <div class="row">
+              <div class="small-12 columns">
+                <div class="element">
+                  <div class="row">
+                    <div class="small-12 columns text-center">
+                      <hr class="cling-to-top"/><span class="stack-icon-snarvei absolute less"><span class="layer1"></span><span class="layer2"></span></span>
+                      <h3 class="header4 keep-from-icon less">Snarveier</h3>
+                    </div>
+                  </div>
+                  <ul class="link-list shortcuts">
+                    <li><a href="#">Hovedtariffavtalen</a></li>
+                    <li><a href="#">Kommunereformen</a></li>
+                    <li><a href="#">Kommit</a></li>
+                    <li><a href="#">Satser</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <!--ul
-        li(data-ng-repeat="item in items")
-            a(ng-click="selected.item = item") {{ item }}
-        -->
-        <!-- p selected: {{ selected.item }}-->
-        <!-- button.button(ng-click="ok()") OK--><a ng-click="cancel()" class="close-reveal-modal">&#215;</a>
       </script>
       <ul class="title-area">
         <li class="logo left"><a href="#/"><img src="/img/logo.svg" width="90" class="logo"/></a>
           <!-- span {{navigation.selected}}-->
         </li>
         <li class="menu-wrapper right"><a ng-click="navigation.open()"><span class="icon-menu"></span></a></li>
-        <li class="search-wrapper right"><a ng-click="console.log('search...')"><span class="icon-search"></span></a></li>
+        <li class="search-wrapper right"><a href="#/sok" ng-click="console.log('search...')"><span class="icon-search"></span></a></li>
       </ul>
     </nav>
   </div>

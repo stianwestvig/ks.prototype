@@ -9,19 +9,19 @@
 <div class="panel gray-something tight-horizontal">
   <div class="row">
     <div class="small-12 medium-8 medium-offset-2 large-4 large-offset-0 columns end">
-      <label for="omraade">Velg område</label>
+      <label for="omraade">Velg fagområde</label>
       <select id="omraade" data-ng-model="page.selectedOmraade" data-ng-options="item.name for item in page.omraade" data-ng-change="page.updateOmraade()">
         <option value="">-</option>
       </select>
     </div>
     <div class="small-12 medium-8 medium-offset-2 large-4 large-offset-0 columns end">
-      <label for="tema">Velg tema</label>
+      <label for="tema">Velg kategori</label>
       <select id="tema" data-ng-model="page.selectedTema" data-ng-options="item.name for item in page.tema | filter:page.selectedOmraade.id" data-ng-change="page.updateTema()" data-ng-disabled="page.selectedOmraade === null || (page.tema | filter:page.selectedOmraade.id).length &lt; 1 ">
         <option value="">-</option>
       </select>
     </div>
     <div class="small-12 medium-8 medium-offset-2 large-4 large-offset-0 columns end">
-      <label for="emne">Velg emne</label>
+      <label for="emne">Velg tema</label>
       <select id="emne" data-ng-model="page.selectedEmne" data-ng-options="item.name for item in page.emne | filter:page.selectedTema.id" data-ng-change="page.updateEmne()" data-ng-disabled=" (page.emne | filter:page.selectedTema.id).length &lt; 1">//
         <option value="">-</option>
       </select>
@@ -29,6 +29,12 @@
   </div>
 </div>
 <div class="panel gray-cold tight-horizontal">
+  <div data-ng-controller="contactController as contact" class="row contact">
+    <div class="small-12 columns right">
+      <div class="contact-button right"><a data-ng-click="contact.open()"><span class="stack-icon-kontakt"><span class="layer1"></span></span></a></div>
+      <div data-ng-include="'contact.html'"></div>
+    </div>
+  </div>
   <div class="row">
     <div class="small-12 columns">
       <div class="row big-news">
@@ -47,7 +53,7 @@
     <div class="small-12 columns">
       <div class="row">
         <div class="small-12 columns medium-text-center">
-          <hr class="cling-to-top"/><span class="stack-icon-aktuelt absolute"><span class="layer1"></span></span>
+          <hr class="cling-to-top"/><span class="stack-icon-aktuelt absolute"><span class="layer1"></span><span class="layer2"></span><span class="layer3"></span></span>
           <h4>Aktuelt</h4>
         </div>
       </div>
@@ -66,39 +72,39 @@
           <div class="small-12 medium-4 columns">
             <ul class="article-list">
               <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
               </li>
               <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
               </li>
               <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
-              </li>
-            </ul>
-          </div>
-          <div class="small-12 medium-4 columns">
-            <ul class="article-list">
-              <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
-              </li>
-              <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
-              </li>
-              <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
               </li>
             </ul>
           </div>
           <div class="small-12 medium-4 columns">
             <ul class="article-list">
               <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
               </li>
               <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
               </li>
               <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
+              </li>
+            </ul>
+          </div>
+          <div class="small-12 medium-4 columns">
+            <ul class="article-list">
+              <li>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
+              </li>
+              <li>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
+              </li>
+              <li>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">KS møtte kommunalministeren</a>
               </li>
             </ul>
           </div>
@@ -108,27 +114,27 @@
           <div class="small-12 medium-4 columns">
             <ul class="article-list">
               <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
               </li>
               <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
-              </li>
-            </ul>
-          </div>
-          <div class="small-12 medium-4 columns">
-            <ul class="article-list">
-              <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
-              </li>
-              <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
               </li>
             </ul>
           </div>
           <div class="small-12 medium-4 columns">
             <ul class="article-list">
               <li>
-                <p class="meta border">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+              </li>
+              <li>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
+              </li>
+            </ul>
+          </div>
+          <div class="small-12 medium-4 columns">
+            <ul class="article-list">
+              <li>
+                <p class="meta">02.09.2011 | KS Sentralt</p><a href="#/artikkel">Etikkutvalgets møte 22 -23 september</a>
               </li>
             </ul>
           </div>
@@ -150,7 +156,7 @@
         <div class="small-12 medium-2 columns">
           <div class="date-container"><span class="day">16</span><span class="month">feb</span><span class="icon-sirkel teal"></span></div>
         </div>
-        <div class="small-12 medium-10 columns"><a href="#">
+        <div class="small-12 medium-10 columns"><a href="#/hendelse">
             <h3 class="header4">Samarbeid om etisk kompetanseheving: Utdeling av Etikkprisen 2014</h3></a></div>
         <div class="small-12 medium-10 columns">
           <p class="meta">Oslo, KS-Møtesenter</p>
@@ -165,7 +171,7 @@
         <div class="small-12 medium-2 columns">
           <div class="date-container"><span class="day">18</span><span class="month">mar</span><span class="icon-sirkel teal"></span></div>
         </div>
-        <div class="small-12 medium-10 columns"><a href="#"></a>
+        <div class="small-12 medium-10 columns"><a href="#/hendelse"></a>
           <h3 class="header4">Kurs i hverdagsrehabilitering</h3>
         </div>
         <div class="small-12 medium-10 columns">
@@ -175,80 +181,92 @@
     </div>
   </div>
   <div class="row">
-    <div class="small-12 columns medium-text-center"><a href="#" class="button teal border radius">Kurs og konferanser</a></div>
+    <div class="small-12 columns medium-text-center"><a href="#/kalender" class="button teal radius margin">Kurs og konferanser</a></div>
   </div>
 </div>
-<div class="panel gray-cold tight-horizontal margin-bottom">
-  <div class="panel green-shade1 tight-horizontal">
-    <div class="row">
-      <div class="small-12 medium-5 medium-offset-1 columns">
-        <h2>Samarbeid om etisk kompetanseheving</h2><a href="#" class="button green radius">Lær mer om prosjektet</a>
-      </div>
-      <div class="small-12 medium-5 medium-offset-1 columns">
-        <h2>Her kan man lage tittel på prosjekt</h2><a href="#" class="button green radius">Lær mer om prosjektet</a>
+<div class="panel green-shade1 tight-all">
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <div class="row">
+        <div class="small-12 medium-10 medium-centered columns">
+          <div class="element">
+            <h2>Samarbeid om etisk kompetanseheving</h2><a href="#" class="button green radius margin-top">Lær mer om prosjektet</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <!-- p OBS: Todelt bakgrunn krever tilpasset koding - gir potensielt bugs.-->
-        <!-- la oss droppe todelt bakgrunn.-->
+    <div class="small-12 medium-6 columns border-left">
+      <div class="row">
+        <div class="small-12 medium-10 medium-centered columns">
+          <div class="element">
+            <h2>Her kan man lage tittel på prosjekt</h2><a href="#" class="button green radius margin-top">Lær mer om prosjektet</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="small-12 medium-4 columns">
-    <div class="panel gray-cold related">
-      <div class="row">
-        <div class="span-12 columns medium-text-center"><span class="stack-icon-veiviser absolute"><span class="layer1"></span></span>
-          <h4 class="keep-from-icon less">Relaterte lenker</h4>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-12 columns">
-          <ul class="link-list">
-            <li><a href="#">Her kommer en link</a></li>
-            <li><a href="#">Her kommer en link</a></li>
-            <li><a href="#">Her kommer en link</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="small-12 medium-4 columns">
-    <div class="panel gray-cold qa">
-      <div class="row">
-        <div class="span-12 columns medium-text-center"><span class="stack-icon-sos absolute"><span class="layer1"></span><span class="layer2"></span></span>
-          <h4 class="keep-from-icon less">Spørsmål og svar</h4>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-12 columns">
-          <ul class="link-list">
-            <li><a href="#">Her kommer en link</a></li>
-            <li><a href="#">Her kommer en link</a></li>
-          </ul>
+<div class="panel white tight-horizontal">
+  <div class="row">
+    <div class="small-12 medium-4 columns">
+      <div class="element">
+        <div class="panel gray-cold related">
+          <div class="row">
+            <div class="span-12 columns medium-text-center"><span class="stack-icon-veiviser absolute"><span class="layer1"></span></span>
+              <h4 class="keep-from-icon less">Relaterte lenker</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 columns">
+              <ul class="link-list">
+                <li><a href="#">Her kommer en link</a></li>
+                <li><a href="#">Her kommer en link</a></li>
+                <li><a href="#/pai">Registrering av PAI data</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="small-12 medium-4 columns">
-    <div class="panel gray-cold examples">
-      <div class="row">
-        <div class="span-12 columns medium-text-center"><span class="stack-icon-ytring absolute"><span class="layer1"></span><span class="layer2"></span></span>
-          <h4 class="keep-from-icon less">Verktøy og gode eksempler</h4>
+    <div class="small-12 medium-4 columns">
+      <div class="element">
+        <div class="panel gray-cold qa">
+          <div class="row">
+            <div class="span-12 columns medium-text-center"><span class="stack-icon-sos absolute"><span class="layer1"></span><span class="layer2"></span></span>
+              <h4 class="keep-from-icon less">Spørsmål og svar</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 columns">
+              <ul class="link-list">
+                <li><a href="#">Her kommer en link</a></li>
+                <li><a href="#">Her kommer en link</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="small-12 columns">
-          <ul class="link-list">
-            <li><a href="#">Her kommer en link</a></li>
-            <li><a href="#">Her kommer en link</a></li>
-            <li><a href="#">Her kommer en link</a></li>
-            <li><a href="#">Her kommer en link</a></li>
-            <li><a href="#">Her kommer en link</a></li>
-            <li><a href="#">Her kommer en link</a></li>
-          </ul>
+    </div>
+    <div class="small-12 medium-4 columns">
+      <div class="element">
+        <div class="panel gray-cold examples">
+          <div class="row">
+            <div class="span-12 columns medium-text-center"><span class="stack-icon-thumb absolute"><span class="layer1"></span><span class="layer2"></span></span>
+              <h4 class="keep-from-icon less">Verktøy og gode eksempler</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 columns">
+              <ul class="link-list">
+                <li><a href="#">Her kommer en link</a></li>
+                <li><a href="#">Her kommer en link</a></li>
+                <li><a href="#">Her kommer en link</a></li>
+                <li><a href="#">Her kommer en link</a></li>
+                <li><a href="#">Her kommer en link</a></li>
+                <li><a href="#">Her kommer en link</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

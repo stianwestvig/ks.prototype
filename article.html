@@ -2,17 +2,23 @@
 <div class="panel gray-something tight-horizontal">
   <div class="row">
     <div class="small-12 columns">
-      <ul class="breadcrumbs">
-        <li><a href="#">KS</a></li>
-        <li><a href="#">Samfunn og demokrati</a></li>
-        <li><a href="#">Etikk</a></li>
-        <li><a href="#">Habilitet</a></li>
-        <li class="current"><a href="#">Inhabilitet og etikk</a></li>
+      <ul class="ks-breadcrumbs">
+        <li><a href="#">KS <span class="icon-arrow-right"></span></a></li>
+        <li><a href="#/section/abed25284e25e912">Samfunn og demokrati <span class="icon-arrow-right"></span></a></li>
+        <li><a href="#/section/abed25284e25e912">Etikk <span class="icon-arrow-right"></span></a></li>
+        <li><a href="#/section/abed25284e25e912">Habilitet <span class="icon-arrow-right"></span></a></li>
+        <li class="current"><span>Inhabilitet og etikk</span></li>
       </ul>
     </div>
   </div>
 </div>
 <div class="panel gray-cold tight-horizontal article">
+  <div data-ng-controller="contactController as contact" class="row contact">
+    <div class="small-12 columns right">
+      <div class="contact-button right"><a data-ng-click="contact.open()"><span class="stack-icon-kontakt"><span class="layer1"></span></span></a></div>
+      <div data-ng-include="'contact.html'"></div>
+    </div>
+  </div>
   <div class="row">
     <div class="small-12 medium-9 large-7 large-offset-2 columns end"><img src="/img/eldrepleie.jpg"/></div>
   </div>
@@ -26,11 +32,14 @@
         <cite>Hvem sa dette?</cite>
       </blockquote><a href="#" class="block-level"><span class="stack-icon-link"></span> Folketrygdloven § 8-51 Hovedtariavtalen § 8.2.2.1</a>
       <p>Arbeidstaker over 70 år har ingen sykelønnsrettigheter, verken etter HTA eller folketrygdloven.</p>
+      <div class="flex-video element">
+        <iframe width="720" height="405" src="//www.youtube.com/embed/nGnB6hbSETA" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </div>
       <p>Arbeidstaker som fortsetter i sin vanlige stilling etter fylte 67 år har rett til full lønn under sykdom, jf. hovedtariavtalen (HTA) kapittel 1 § 8 punkt 8.2.2.1. Dette gjelder arbeidstakere sykdom, jf. hovedtariavtalen (HTA) kapittel 1 § 8 punkt 8.2.2.1. Dette gjelder arbeidstakere</p>
       <p>Arbeidstaker over 70 år har ingen sykelønnsrettigheter, verken etter HTA eller folketrygdloven.</p><a href="#" class="block-level"><span class="stack-icon-link"></span> Personalhåndboken 2014 kapittel 4 punkt 4</a>
       <div class="row ytring element">
         <div class="small-12 columns medium-text-center">
-          <hr/><span class="icon-sirkel absolute"></span>
+          <hr/><span class="stack-icon-ytring absolute"><span class="layer1"></span><span class="layer2"></span></span>
           <!--h4 Ytringer fra KS-->
         </div>
         <div class="small-12 columns">
@@ -43,12 +52,12 @@
       </div>
       <div class="row fakta element">
         <div class="small-12 columns medium-text-center">
-          <hr/><span class="icon-sirkel absolute"></span>
+          <hr/><span class="stack-icon-veiviser absolute"><span class="layer1"></span></span>
           <!--h4 Fakta-->
         </div>
         <div class="small-12 medium-6 columns">
           <h3>Fakta</h3>
-          <p>Sykefraværet i kommunesektoren var i perioden 4. kvartal 2012 til 3. kvartal 2013 9,5 prosent.</p>
+          <p>Sykefraværet i kommunesektoren var i perioden 4. kvartal 2012 til 3. kvartal 2013 9,5 prosent. Pass på fi.</p>
           <p>Dette er en svak økning sammenliknet med tilsvarende periode i fjor. For å nå målet i den nye IA avtalen (2014-2018) om 20 prosent reduksjon i sykefraværet i forhold til nivået i 2001, må sykefraværet i kommunesektoren ned til 6,7 prosent i 2018.</p>
         </div>
         <div class="small-12 medium-6 columns statistikk"><img src="/img/statistikk.png"/>
@@ -59,29 +68,31 @@
     <!-- rightcol:-->
     <div class="small-12 medium-3 large-2 large-offset-1 columns hide-for-small">
       <hr class="fat"/>
-      <div class="right-col text-center"><a href="#" class="element"><span class="stack-icon-veiviser"><span class="layer1"></span></span>
+      <div class="right-col text-center"><a href="#" class="element"><span class="stack-icon-ytring"><span class="layer1"></span><span class="layer2"></span></span>
           <p class="header4">Ytring fra KS</p><span class="icon-arrow-down"></span></a><a href="#" class="element"><span class="stack-icon-veiviser"><span class="layer1"></span></span>
           <p class="header4">Fakta</p><span class="icon-arrow-down"></span></a></div>
     </div>
   </div>
 </div>
-<div class="panel white tight-all">
+<div class="panel white tight-horizontal">
   <div class="row">
     <div class="small-12 medium-6 large-5 medium-centered columns">
-      <div class="panel gray-cold article">
-        <div class="row">
-          <div class="span-12 columns medium-text-center"><span class="stack-icon-veiviser absolute"><span class="layer1"></span></span>
-            <h4 class="keep-from-icon less">Videre lesning</h4>
+      <div class="element">
+        <div class="panel gray-cold article">
+          <div class="row">
+            <div class="span-12 columns medium-text-center"><span class="stack-icon-veiviser absolute"><span class="layer1"></span></span>
+              <h4 class="keep-from-icon less">Videre lesning</h4>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="small-12 columns">
-            <ul class="link-list">
-              <li><a href="#">Lenke til innhold på for eksempel nav.no</a></li>
-              <li><a href="#">Lenke til innhold på for eksempel ssb.no</a></li>
-              <li><a href="#">Lenke til innhold på for eksempel nav.no</a></li>
-              <li><a href="#">Lenke til innhold på for eksempel ssb.no</a></li>
-            </ul>
+          <div class="row">
+            <div class="small-12 columns">
+              <ul class="link-list">
+                <li><a href="#">Lenke til innhold på for eksempel nav.no</a></li>
+                <li><a href="#">Lenke til innhold på for eksempel ssb.no</a></li>
+                <li><a href="#">Lenke til innhold på for eksempel nav.no</a></li>
+                <li><a href="#">Lenke til innhold på for eksempel ssb.no</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -91,7 +102,7 @@
 <div class="panel gray-cold tight-horizontal kontakt">
   <div class="row">
     <div class="small-12 medium-6 medium-offset-3 large-4 large-offset-4 columns color-end">
-      <div class="medium-text-center"><span class="icon-sirkel absolute"></span>
+      <div class="medium-text-center"><span class="stack-icon-kontakt absolute"><span class="layer1"></span></span>
         <h3 class="keep-from-icon less">Kontaktperson</h3>
         <p>Fornavn, etternavn</p>
       </div>

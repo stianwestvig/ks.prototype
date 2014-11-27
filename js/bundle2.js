@@ -32302,11 +32302,26 @@ var app = angular.module('app', ['ngAnimate', 'ngRoute', 'mm.foundation'])
                     templateUrl: "./omraade.html",
                     controller: "pageController"
                 })
+                .when("/sok", {
+                    templateUrl: "./search.html"
+                })
                 .when("/artikkel", {
                     templateUrl: "./article.html"
                 })
+                .when("/kalender", {
+                    templateUrl: "./calendar.html"
+                })
+                .when("/hendelse", {
+                    templateUrl: "./event.html"
+                })
+                .when("/region", {
+                    templateUrl: "./region.html"
+                })
                 .when("/design", {
                     templateUrl: "./design.html"
+                })
+                .when("/pai", {
+                    templateUrl: "./pai.html"
                 })
                 .otherwise({
                     redirectTo: '/'
@@ -32314,6 +32329,20 @@ var app = angular.module('app', ['ngAnimate', 'ngRoute', 'mm.foundation'])
         }
     ]);
 
+
+
+
+app.controller('calendarController', function() {
+    var calendar = this;
+    calendar.show = false;
+
+    // debug:
+    //calendar.show = true;
+
+    calendar.toggle = function () {
+        calendar.show = !calendar.show;
+    }
+});
 
 
 
@@ -32327,7 +32356,8 @@ app.controller('contactController', function($modal) {
         var modalInstance = $modal.open({
             templateUrl: 'contact-template.html',
             controller: contact.ModalInstanceCtrl,
-            windowClass: 'contact-modal'
+            windowClass: 'full contact-modal',
+            backdrop: false
         });
 
         contact.show = true;
@@ -32358,11 +32388,13 @@ app.controller('navigationController', function($modal) {
     var navigation = this;
     navigation.items = ['item1', 'item2', 'item3'];
 
+
     navigation.open = function () {
 
         var modalInstance = $modal.open({
             templateUrl: 'navigation-template.html',
             controller: navigation.ModalInstanceCtrl,
+            windowClass: 'full menu-modal',
             resolve: {
                 items: function () {
                     return navigation.items;
@@ -32378,7 +32410,23 @@ app.controller('navigationController', function($modal) {
     };
 
 
-    navigation.ModalInstanceCtrl= function ($scope, $modalInstance, items) {
+    navigation.ModalInstanceCtrl= function ($scope, $modalInstance, items, $templateCache) {
+
+
+
+        /*$scope.tabs = [
+            { title:"Økonomi og tall", content:"Dynamic content 1" },
+            { title:"Samfunn og demokrati", content:"Dynamic content 2" },
+            { title:"Oppvekst og utdanning", content:"Dynamic content 3" },
+            { title:"Helse og velferd", content:"Dynamic content 4" },
+            { title:"Digitalisering", content:"Dynamic content 4" },
+            { title:"FOU", content:"Dynamic content 4" },
+            { title:"Regionsider", content:"Dynamic content 4" },
+            { title:"Utvikling", content:"Dynamic content 4" },
+            { title:"Kurs og konferanse", content:"Dynamic content 4" },
+            { title:"Om KS", content:"Dynamic content 4" },
+            { title:"Nyhetsarkiv", content:"Dynamic content 4" }
+        ];*/
 
         $scope.items = items;
         $scope.selected = {
@@ -32424,7 +32472,10 @@ var pageController = app.controller('pageController', function($scope, dataServi
     page.habilitet = false;
 
     page.mainArticle = null;
-    page.isAzure = window.location.href.indexOf("azurewebsites") > -1;
+    page.useOfflineData = window.location.href.indexOf("azurewebsites") > -1;
+
+    // debug: always in offline mode:
+    // page.useOfflineData = true;
 
 
     $scope.routeParams = $routeParams;
@@ -32442,7 +32493,7 @@ var pageController = app.controller('pageController', function($scope, dataServi
     $scope.$evalAsync(function () {
 
         // get all data:
-        if (!page.isAzure) {
+        if (!page.useOfflineData) {
 
             dataService.getOmraade()
                 .success(function (data) {
@@ -32627,7 +32678,12 @@ var pageController = app.controller('pageController', function($scope, dataServi
 'use strict';
 
 app.factory('dataService', function($http) {
-    var apiUrl = 'http://localhost:3000/';
+    var apiUrl = 'http://10.1.101.50:3000/';
+
+    // locally:
+    if (window.location.href.indexOf("localhost") > -1) {
+        apiUrl = 'http://localhost:3000/';
+    }
 
     return {
         getOmraade: function () {
