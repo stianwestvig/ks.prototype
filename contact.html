@@ -1,0 +1,76 @@
+
+<script type="text/ng-template" id="contact-template.html">
+  <div class="row contact-pane">
+    <div class="small-12 medium-6 large-3 columns right">
+      <div class="border">
+        <div class="panel blue-light-shade3 tighter">
+          <!-- one person--><img src="/img/profil_bilde2.jpg"/>
+          <div class="panel blue-light-shade3 tight-horizontal">
+            <h4>Fornavn Etternavn</h4>
+            <h5>Rådgiver, Helse og velferd</h5><a href="mailto:navn@ks.no">fornavn.etternavn@ks.no</a>
+          </div>
+          <!-- separator-->
+          <hr class="white less cling-to-top"/>
+          <!-- one more person--><img src="/img/profil_bilde2.jpg"/>
+          <div class="panel blue-light-shade3 tight-horizontal">
+            <h4>Fornavn Etternavn</h4>
+            <h5>Rådgiver, Arbeidsgiverspørsmål</h5><a href="mailto:navn@ks.no">fornavn.etternavn@ks.no</a>
+          </div>
+        </div>
+        <div class="panel gray-something tighter">
+          <div class="wrap-icon search">
+            <input id="search-employee" type="text" placeholder="Søk navn eller tema" class="carry-icon"/><span aria-hidden="true" class="icon-search"></span>
+          </div>
+        </div>
+        <div class="panel white tighter">
+          <h5>Medlemsservice</h5>
+          <div><a href="tel:24136403"><span class="icon-phone2"></span> 24 13 64 03</a></div>
+          <p><a href="mailto:medlemsservice@ks.no"><span class="icon-envelope"></span> medlem@ks.no</a></p>
+          <h5>Servicetorget</h5>
+          <div><a href="tel:24136403"><span class="icon-phone2"></span> 24 13 64 03</a></div>
+          <p><a href="mailto:medlemsservice@ks.no"><span class="icon-envelope"></span> service@ks.no</a></p>
+          <h5>Pressekontaker</h5>
+          <div><a href="tel:24136403"><span class="icon-phone2"></span> 24 13 64 03</a></div>
+          <p><a href="mailto:medlemsservice@ks.no"><span class="icon-envelope"></span> presse@ks.no</a></p>
+        </div>
+        <div class="panel gray-something tighter">
+          <select data-ng-model="region" data-ng-init="region = 'Velg region'">
+            <option>Velg region</option>
+            <option>Østlandet</option>
+            <option>Vest-Norge</option>
+            <option>Nord-Norge</option>
+            <option>Trønderlag</option>
+          </select>
+          <div data-ng-show="region != 'Velg region'">
+            <h4>Arholm Helene</h4>
+            <h5>Regionsdirektør KS Vest-Norge</h5>
+            <div><a href="mailto:helene.arholm@ks.no"><span class="icon-envelope"></span> helene.arholm@ks.no</a></div>
+            <p>Besøks og postadresser</p>
+            <p>todo expand boks.</p>
+          </div>
+        </div>
+        <div class="panel white tighter">
+          <h5>KS</h5>
+          <p>Haakon VIIs gate 9, 0161 Oslo</p>
+          <div><a href="tel:24136403">24 13 26 00</a></div>
+          <div><a href="mailto:ks@ks.no">ks@ks.no</a></div>
+          <p>Org.nr: 971 032 146</p>
+          <p>Redaktør: Sissel Ambjør</p>
+        </div>
+        <div class="panel white tighter">
+          <ul>
+            <li><a href="#">KS advokatene</a></li>
+            <li><a href="#">todo: ikoner, ekspand bokser</a></li>
+            <li><a href="#">KS bedrift</a></li>
+            <li><a href="#">KS konsulent</a></li>
+            <li><a href="#">KS agenda</a></li>
+            <li><a href="#">KS Besøkssenter</a></li>
+            <li><a href="#">Kommunenes hus</a></li>
+            <li><a href="#">Kommunal rapport</a></li>
+            <li><a href="#">Kommuneforlaget</a></li>
+          </ul><a ng-click="cancel()" class="close-reveal-modal">&#215;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
